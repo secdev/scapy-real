@@ -25,9 +25,8 @@ class PostInstallCommand(install):
   """Post-installation for installation mode."""
 
   def run(self):
-    pad_desc = "\n" + "\n".join(("#" * 60,) * 3) + "\n"
-    warnings.warn(pad_desc + long_description + pad_desc,
-                  DeprecationWarning, stacklevel=0)
+    pad_desc = "\n" + "\n".join(("#" * 60,)) + "\n"
+    raise DeprecationWarning(pad_desc + long_description + pad_desc)
 
 
 setup(
